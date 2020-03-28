@@ -1,0 +1,26 @@
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.exe
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.AssemblyInfoInputs.cache
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.AssemblyInfo.cs
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.Core.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\System.Interactive.Async.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.csproj.CopyComplete
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.Commands.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.Rest.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.Webhook.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.WebSocket.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.deps.json
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.runtimeconfig.json
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.runtimeconfig.dev.json
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord Console Core.pdb
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.pdb
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.genruntimeconfig.cache
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Victoria.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\Discord.Net.Providers.WS4Net.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\SuperSocket.ClientEngine.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\bin\Debug\netcoreapp3.1\WebSocket4Net.dll
+C:\Users\Jonathan\source\repos\Discord Console Core\Discord Console Core\obj\Debug\netcoreapp3.1\Discord Console Core.csproj.CoreCompileInputs.cache
