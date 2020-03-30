@@ -29,8 +29,8 @@ namespace Discord_Console_Core
 
         public async Task MainAsync()
         {
-            //var botToken = "NjkzMzEwMTYzNTExMTQ4NTY0.Xn9wrQ.BO73mRxkYe2MPjhqpicSV_7zp9I";
-            var botToken = "NjkzMzEwMTYzNTExMTQ4NTY0.XoAdpw.nii-QCraDuEIB56LK6Zi0y-aPt8";
+            
+            var botToken = "Sua boot key";
 
             _client = new DiscordSocketClient(new DiscordSocketConfig
             {
