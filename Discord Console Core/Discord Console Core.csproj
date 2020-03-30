@@ -14,7 +14,9 @@
     <PackageReference Include="Discord.Net.Rest" Version="2.1.1" />
     <PackageReference Include="Discord.Net.Webhook" Version="2.1.1" />
     <PackageReference Include="Discord.Net.WebSocket" Version="2.1.1" />
-    <PackageReference Include="Victoria" Version="5.1.2" />
+    <PackageReference Include="Lavalink4NET" Version="1.4.10" />
+    <PackageReference Include="Lavalink4NET.Discord.NET" Version="1.4.10" />
+    <PackageReference Include="Lavalink4NET.MemoryCache" Version="1.4.10" />
   </ItemGroup>
 
 </Project>

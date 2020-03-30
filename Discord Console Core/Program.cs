@@ -6,8 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Discord_Console_Core.Services;
+using Lavalink4NET;
+using Lavalink4NET.DiscordNet;
+using Lavalink4NET.Player;
+using Lavalink4NET.Rest;
 
 namespace Discord_Console_Core
 {
@@ -17,13 +22,15 @@ namespace Discord_Console_Core
         private DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
+        private IAudioService _audioService;
 
         public static void Main(string[] args)
             => new Program().MainAsync().GetAwaiter().GetResult();
 
         public async Task MainAsync()
         {
-            var botToken = "Seu Token";
+            //var botToken = "NjkzMzEwMTYzNTExMTQ4NTY0.Xn9wrQ.BO73mRxkYe2MPjhqpicSV_7zp9I";
+            var botToken = "NjkzMzEwMTYzNTExMTQ4NTY0.XoAdpw.nii-QCraDuEIB56LK6Zi0y-aPt8";
 
             _client = new DiscordSocketClient(new DiscordSocketConfig
             {
@@ -31,8 +38,17 @@ namespace Discord_Console_Core
                 MessageCacheSize = 50,
                 LogLevel = LogSeverity.Debug
             });
+
             _commands = new CommandService();
-            _services = new ServiceCollection().AddSingleton(_client).AddSingleton(_commands).AddSingleton<MusicServices>().BuildServiceProvider();
+            _services = new ServiceCollection().AddSingleton(_client).AddSingleton(_commands).AddSingleton<IAudioService, LavalinkNode>()
+                    .AddSingleton<IDiscordClientWrapper, DiscordClientWrapper>().AddSingleton(new LavalinkNodeOptions
+                    {
+                        RestUri = "http://localhost:2333/",
+                        WebSocketUri = "ws://localhost:2333/",
+                        Password = "youshallnotpass"
+                    }).BuildServiceProvider();
+
+            _audioService = _services.GetRequiredService<IAudioService>();
 
             _client.Ready += Client_Ready;
             _client.Log += ClientLog;
@@ -45,6 +61,7 @@ namespace Discord_Console_Core
             await _client.StartAsync();
             await Task.Delay(-1);
         }
+
         private async Task ComandosBot()
         {
             _client.MessageReceived += iniciandoComandos;
@@ -58,7 +75,7 @@ namespace Discord_Console_Core
 
             var Context = new SocketCommandContext(_client, mensagem);
             int argPost = 0;
-            if (mensagem.HasStringPrefix("-", ref argPost))
+            if (mensagem.HasStringPrefix("*", ref argPost))
             {
                 var result = await _commands.ExecuteAsync(Context, argPost, _services);
 
@@ -73,6 +90,7 @@ namespace Discord_Console_Core
         private async Task Client_Ready()
         {
             await _client.SetGameAsync("O jogo do menino bot", "http://google.com.br", ActivityType.Listening);
+            _client.Ready += () => _audioService.InitializeAsync();
         }
 
         private Task ClientLog(LogMessage msg)
@@ -86,14 +104,14 @@ namespace Discord_Console_Core
             if (message.Content == "oi" || message.Content == "Oi" && !message.Author.IsBot)
                 await message.Channel.SendMessageAsync("Cala boca viado");
 
-            if (message.Content == "-comandos" || message.Content == "-cmd" && !message.Author.IsBot)
-                await message.Channel.SendMessageAsync("Segue a lista de comandos: \n-join: Me coloca dentro do seu Channel ( ͡° ͜ʖ ͡°) \n-google: Faz aquela busca marota \n*Comandos em desenvolvimento! :) ");
+            if (message.Content == "*comandos" || message.Content == "*cmd" && !message.Author.IsBot)
+                await message.Channel.SendMessageAsync("Segue a lista de comandos: \n*join: Me coloca dentro do seu Channel ( ͡° ͜ʖ ͡°) \n*google: Faz aquela busca marota \n-Comandos em desenvolvimento! :) ");
 
             if (message.Content == "play" || message.Content == "play" && !message.Author.IsBot)
                 await message.Channel.SendMessageAsync("Em implementação");
 
-            if (message.Content != null && message.Content[0] != '-' && !message.Author.IsBot)
-                await message.Channel.SendMessageAsync("Koé maluco, os comandos começam com \"-\". Tenta aí de novo: -comandos ou -cmd ");
+            if (message.Content != null && message.Content[0] != '*' && !message.Author.IsBot)
+                await message.Channel.SendMessageAsync("Koé maluco, os comandos começam com \"*\". Tenta aí de novo: *comandos ou *cmd ");
         }
 
         private Process CreateStream(string path)
